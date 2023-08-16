@@ -36,12 +36,28 @@
     width: 8px;
     height: 2px;
 }
+
+#particles-js {
+  z-index: 1;
+}
+
+svg {
+  z-index: -2;
+}
+
+#particles-js {
+  z-index: -1;
+}
+
 </style>
 </head>
 <body>
+  
     <section id="main">
+      
         <div class="wave-container">
             <div class="text-container">
+              <div id="particles-js"><canvas class="particles-js-canvas-el" style="width: 100vh; height: 100vh;"></canvas></div> 
                 <header>
                     
                     <center>
@@ -64,17 +80,19 @@
                  
                   </header>
                   <div style="padding-top: 300px;">
-                    <CENTER> 
-                      <h1 style="font-family: 'Bebas Neue', sans-serif; color: #fff; font-size: 70px;letter-spacing: 2px; word-spacing: 3px;">WHAT ARE THE  <span style="color: #FBAE3C;"> IMPACTS </span>OF FASHION WASTE?</h1>
-                    </CENTER>    
+                    
+                      <center>
+                        <div class="typing">
+                          <h1 style="font-family: 'Bebas Neue', sans-serif; color: #fff; font-size: 70px;letter-spacing: 2px; word-spacing: 3px;">WHAT ARE THE  <span style="color: #FBAE3C;"> IMPACTS </span>OF FASHION WASTE?</h1>
+                        </div>
+                      </center>
+                     
                     <center><a href="#envir" id="nextSection"><i class="fa-solid fa-chevron-down fa-2xl fa-bounce" style="color: #fff; margin-top: 100px;
                         padding-bottom: 180px;"></i></a></center> 
                   </div> 
             </div>
             <svg id="visual" viewBox="0 0 1600 830" width="1600" height="830" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="1600" height="830" fill="#001220"></rect><defs><linearGradient id="grad1_0" x1="48.1%" y1="0%" x2="100%" y2="100%"><stop offset="11.44578313253012%" stop-color="#001220" stop-opacity="1"></stop><stop offset="88.55421686746988%" stop-color="#001220" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad2_0" x1="0%" y1="0%" x2="51.9%" y2="100%"><stop offset="11.44578313253012%" stop-color="#001220" stop-opacity="1"></stop><stop offset="88.55421686746988%" stop-color="#001220" stop-opacity="1"></stop></linearGradient></defs><g transform="translate(1600, 0)"><path d="M0 498C-65.3 490.6 -130.6 483.2 -190.6 460.1C-250.6 437 -305.3 398.3 -351.4 351.4C-397.6 304.6 -435.2 249.7 -458.2 189.8C-481.3 129.9 -489.6 64.9 -498 0L0 0Z" fill="#FBAE3C"></path></g><g transform="translate(0, 830)"><path d="M0 -498C66.8 -492.4 133.6 -486.9 190.6 -460.1C247.6 -433.3 294.8 -385.2 336.6 -336.6C378.4 -287.9 414.7 -238.7 440.7 -182.5C466.7 -126.3 482.3 -63.2 498 0L0 0Z" fill="#FBAE3C"></path></g></svg>
-        </div>   
-                                                         
-      </section>                                             
+        </div>                                           
     </section>
     <section id="envir">
       <div class="yellow" style="margin-top: 40px;" ><center><h1 class="h1">Environmental Impact</h1></center></div>
@@ -206,34 +224,35 @@
     <span class="dot" onclick="currentSlide(4)"></span> 
     <span class="dot" onclick="currentSlide(5)"></span> 
   </div>
-  
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script>
-  let slideIndex = 1;
-  showSlides(slideIndex);
-  
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
+    particlesJS.load('particles-js', 'impacts.json',
+        function(){
+            console.log("particles.json loaded...");
+        });
+    </script>
+      <script>
+
+ let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
   }
-  
-  function currentSlide(n) {
-    showSlides(slideIndex = n);
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
   }
-  
-  function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {slideIndex = 1}    
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-    }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex-1].style.display = "block";  
-    dots[slideIndex-1].className += " active";
-  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 4000); // Change image every 2 seconds
+}
   </script>
 </section>
 <footer class="footer" style="background-color: #FBAE3C;">

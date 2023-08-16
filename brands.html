@@ -13,11 +13,19 @@
 <link rel="manifest" href="/site.webmanifest">  
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 <script src="https://unpkg.com/feather-icons"></script>
+
+<style>
+  svg {
+    z-index: -2;
+  }
+</style>
+
 </head>
 <body>
     <section id="main">
         <div class="wave-container">
             <div class="text-container">
+              <div id="particles-js"><canvas class="particles-js-canvas-el" style="width: 100vh; height: 100vh;"></canvas></div> 
                 <header>
                     <center>
                         <ul class="navlinks">
@@ -37,8 +45,12 @@
                     </center>
                     <!-- <i class="fa-solid fa-bars fa-2xl" style="color: #c6ffc6;" id="hamburger"></i> -->
                   </header>
-                  <CENTER> 
-                    <h1 style="font-family: 'Bebas Neue', sans-serif; color: #fff; font-size: 68px; padding-top: 180px; font-size: 72px;">BRANDS CONTRIBUTION IN<span style="color: #FA7268;"> SUSTAINABLE DEVELOPMENT</span></h1> 
+                  <center>
+                  <div class="typing">
+                    
+                      <h1 style="font-family: 'Bebas Neue', sans-serif; color: #fff; font-size: 68px; padding-top: 180px; font-size: 72px;">BRANDS CONTRIBUTION IN<span style="color: #FA7268;"> SUSTAINABLE DEVELOPMENT</span></h1>
+                  </div> 
+                  </center>
                   <center><a href="#indian" id="nextSection"><i class="fa-solid fa-chevron-down fa-2xl fa-bounce" style="color: #fff; margin-top: 100px;
                       padding-bottom: 180px;"></i></a></center>     
             </div>
@@ -140,6 +152,14 @@
         <script>
           feather.replace()
         </script>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+    particlesJS.load("particles-js", "particles.json", function () {
+        console.log("yeah");
+    });
+
+    </script>
         <script>
           mybutton = document.getElementById("top");
         
