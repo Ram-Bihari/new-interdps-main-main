@@ -1,0 +1,26 @@
+@media (max-width: 1170px) {
+    .videoTEXT {
+        left: 0;
+    }
+}
+
+@media (max-width: 940px) {
+    .solHEADING {
+        font-size: 40px;
+    }
+
+    .videoTEXT {
+        display: none;
+    }
+}
+
+@media (max-width: 862px) {
+    #steps {
+        padding-top: 240px;
+    }
+
+    #responsive {
+        margin-left: 25%;
+    }
+
+}

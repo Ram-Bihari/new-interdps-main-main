@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+
+  .card-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    width: 100%;
+  }
+
+  .card {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .card-container {
+      flex-direction: column;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="card-container">
+    <div class="card">
+      <h2>Card 1</h2>
+      <p>This is the content of card 1.</p>
+    </div>
+    <div class="card">
+      <h2>Card 2</h2>
+      <p>This is the content of card 2.</p>
+    </div>
+    <div class="card">
+      <h2>Card 3</h2>
+      <p>This is the content of card 3.</p>
+    </div>
+  </div>
+</body>
+</html>
